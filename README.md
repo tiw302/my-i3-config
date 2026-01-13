@@ -12,7 +12,7 @@ speed is the priority here. everything opens instantly. no animations, no lag, n
 ![Status Bar](./images/bar.png)
 ![Workspaces](./images/ws.png)
 
-## eybindings reference
+## keybindings reference
 
 Since you probably don't want to read the entire `config` file, here is the quick cheat sheet. (Note: `$mod` is the **Super/Windows** key).
 
@@ -53,7 +53,7 @@ If you don't install these, the config will probably crash and burn:
 
 ```bash
 # Clone the repo
-git clone [https://github.com/tiw302/my-i3-setup](https://github.com/tiw302/my-i3-setup)
+git clone [https://github.com/tiw302/my-i3-config](https://github.com/tiw302/my-i3-config)
 cd my-i3-setup
 
 # Copy config (Backup yours first!)
@@ -62,10 +62,10 @@ cp config ~/.config/i3/config
 
 ## install commands (for the lazy)
 ```bash
-# arch btw
+# arch
 sudo pacman -S i3-wm kitty rofi qutebrowser thunar picom flameshot brightnessctl dex nm-applet blueman
 
-# debian/ubuntu normies
+# debian/ubuntu
 sudo apt install i3 kitty rofi qutebrowser thunar picom flameshot brightnessctl dex network-manager-gnome blueman
 ```
 >>>>>>> b12e8db (initial commit: complete i3wm setup with docs and previews)
