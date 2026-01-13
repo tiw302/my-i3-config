@@ -1,0 +1,29 @@
+# --- Binary & Executables ---
+*
+!*.*
+!Makefile
+!*.c
+!*.h
+!*.md
+!.gitignore
+
+*.o
+*.obj
+*.so
+*.a
+*.lib
+
+# --- Build Directory ---
+build/
+bin/
+
+# --- Editor Specific ---
+*.swp
+*.swo
+.netrwhist
+undo/
+
+*.save
+
+.DS_Store
+Thumbs.db

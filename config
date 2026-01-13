@@ -1,0 +1,129 @@
+set $mod Mod4
+font pango:DejaVu Sans Mono 9
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+# --- autostart ---
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-applet
+exec --no-startup-id picom -b
+exec --no-startup-id dex --autostart --environment i3
+
+# --- key bindings ---
+# applications
+bindsym $mod+Return   exec kitty
+bindsym $mod+d        exec rofi -show drun -theme dmenu
+bindsym $mod+F2       exec qutebrowser
+bindsym $mod+F3       exec thunar
+bindsym $mod+Shift+p  exec thunar
+bindsym Print         exec flameshot gui
+
+# media keys
+set $refresh killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+# window management
+bindsym $mod+Shift+q kill
+bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# focus (vim keys + arrows)
+bindsym $mod+j focus left
+bindsym $mod+Left focus left
+bindsym $mod+k focus down
+bindsym $mod+Down focus down
+bindsym $mod+l focus up
+bindsym $mod+Up focus up
+bindsym $mod+semicolon focus right
+bindsym $mod+Right focus right
+
+# move (vim keys + arrows)
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+Right move right
+
+# layout
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+a focus parent
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+set $shutdown_msg "Yo, sure u wanna bail?"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Yo, sure u wanna bail?' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# --- workspaces ---
+set $ws1 "1: term"
+set $ws2 "2: web"
+set $ws3 "3: music"
+set $ws4 "4: files"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# move to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# auto assign applications
+for_window [class="qutebrowser"] move to workspace $ws2
+
+mode "resize" {
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
+    
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bar {
+#   status_command i3status
+    status_command /home/tiw/mybar
+    position top
+}
