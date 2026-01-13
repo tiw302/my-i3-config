@@ -68,4 +68,3 @@ sudo pacman -S i3-wm kitty rofi qutebrowser thunar picom flameshot brightnessctl
 # debian/ubuntu
 sudo apt install i3 kitty rofi qutebrowser thunar picom flameshot brightnessctl dex network-manager-gnome blueman
 ```
->>>>>>> b12e8db (initial commit: complete i3wm setup with docs and previews)
