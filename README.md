@@ -9,8 +9,10 @@ speed is the priority here. everything opens instantly. no animations, no lag, n
 ## Preview ( •͡˘ _•͡˘)ノð
 
 ![Full Setup](./images/preview.png)
+![Full Setup](./images/preview2.png)
+![Full Setup](./images/preview3.png)
 ![Status Bar](./images/bar.png)
-![Workspaces](./images/ws.png)
+![Workspaces](./images/workspaces.png)
 
 ## keybindings reference
 
@@ -63,6 +65,8 @@ cd my-i3-setup
 
 # Copy config (Backup yours first!)
 cp config ~/.config/i3/config
+```
+
 ## install commands (for the lazy)
 ```bash
 # arch
