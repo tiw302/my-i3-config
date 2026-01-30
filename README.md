@@ -46,8 +46,13 @@ If you don't install these, the config will probably crash and burn:
 * **Browser:** `qutebrowser`
 * **Others:** `picom`, `flameshot`, `brightnessctl`, `dex`, `nm-applet`, `blueman`
 
+### typography (don't ignore this)
+The config is hardcoded to use these fonts. If you don't install them, your text will look garbage and icons will be broken squares.
+* **Code/Icons:** `JetBrainsMono Nerd Font`
+* **Thai Text:** `IBM Plex Sans Thai` (size 10)
+
 ## how to steal this
-1. Install the requirements listed above.
+1. Install the requirements listed above (including fonts).
 2. Yeet the `config` file into `~/.config/i3/`.
 3. Press `$mod+Shift+r` to restart i3.
 
@@ -58,14 +63,11 @@ cd my-i3-setup
 
 # Copy config (Backup yours first!)
 cp config ~/.config/i3/config
-```
-
 ## install commands (for the lazy)
 ```bash
 # arch
-sudo pacman -S i3-wm kitty rofi qutebrowser thunar picom flameshot brightnessctl dex nm-applet blueman
+sudo pacman -S i3-wm kitty rofi qutebrowser thunar picom flameshot brightnessctl dex nm-applet blueman ttf-jetbrains-mono-nerd ttf-ibm-plex
 
 # debian/ubuntu
-sudo apt install i3 kitty rofi qutebrowser thunar picom flameshot brightnessctl dex network-manager-gnome blueman
+sudo apt install i3 kitty rofi qutebrowser thunar picom flameshot brightnessctl dex network-manager-gnome blueman fonts-jetbrains-mono fonts-ibm-plex
 ```
->>>>>>> b12e8db (initial commit: complete i3wm setup with docs and previews)

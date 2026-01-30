@@ -124,6 +124,6 @@ bindsym $mod+r mode "resize"
 
 bar {
 #   status_command i3status
-    status_command /home/tiw/mybar
+    status_command ~/cbar # [git clone [https://github.com/tiw302/my-i3-config](https://github.com/tiw302/my-i3-config)]
     position top
 }
