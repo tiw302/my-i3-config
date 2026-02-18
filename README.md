@@ -13,10 +13,10 @@ this config is the result of actually reading the i3 documentation and understan
 
 ## Preview ( •̀ ˘ •́)ノð
 
-![Full Setup](./images/Preview.png)
-![Full Setup](./images/Preview_2.png)
-![Status bar](./images/Status_bar.png)
-![Workspaces](./images/Workspaces.png)
+![Full Setup](assets/Preview_1.png)
+![Full Setup](assets/Preview_2.png)
+![Status bar](assets/Status_bar.png)
+![Workspaces](assets/Workspaces.png)
 
 ## What You Get
 

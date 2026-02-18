@@ -1,30 +1,16 @@
-# --- Binary & Executables ---
-*
-!*.*
-!Makefile
-!*.c
-!*.h
-!*.md
-!.gitignore
-!images/
-
-*.o
-*.obj
-*.so
-*.a
-*.lib
-
-# --- Build Directory ---
-build/
-bin/
-
-# --- Editor Specific ---
+# --- Editor / IDE temporary files ---
+# Vim / Neovim
 *.swp
 *.swo
+*~
+tags
 .netrwhist
 undo/
 
+# Nano / Micro / General backups
 *.save
+*.bak
 
+# --- OS Generated Files ---
 .DS_Store
 Thumbs.db
